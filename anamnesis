@@ -1,0 +1,258 @@
+#Hastaya Ait Bilgiler
+
+print("""Welcome to the hospital.
+In order for us to provide you with the best healthcare service, please fill in the required information accurately and completely.""")
+
+## This project is about the hospital taking anamnesis system. 
+
+class Patient:
+
+    def _init_(self, ID, name, surname, age, gender, weight, height, status, profession, phone, address):
+        self.ID = ID
+        self.__name = name
+        self.__surname = surname
+        self.__age = age
+        self.__gender = gender
+        self.__weight = weight
+        self.__height = height
+        self.__status = status
+        self.__profession = profession
+        self.__phone = phone
+        self.__address = address
+
+    def get_name(self):
+        print("Patient name = %s" % self.__name)
+    def set_name(self, newname):
+        self.__name = newname
+
+    def get_surname(self):
+        print("Patient surname = %s" % self.__surname)
+    def set_surname(self, newsurname):
+        self.__surname = newsurname
+    
+    def get_age(self):
+        print("Patient age = %d" % self.__age)
+    def set_age(self, newage):
+        self.__name = newage
+
+    def get_gender(self):
+        print("Patient gender = %s" % self.__gender)
+    def set_gender(self, newgender):
+        self.__gender = newgender
+
+    def get_weight(self):
+        print("Patient weight = %f" % self.__weight)
+    def set_weight(self, newweight):
+        self.__weight = newweight
+
+    def get_height(self):
+        print("Patient height = %f" % self.__height)
+    def set_height(self, newheight):
+        self.__height = newheight
+
+    def get_status(self):
+        print("Patient status = %s" % self.__status)
+    def set_status(self, newstatus):
+        self.__status = newstatus
+
+    def get_profession(self):
+        print("Patient profession = %s" % self.__profession)
+    def set_profession(self, newprofession):
+        self.__profession = newprofession
+
+    def get_phone(self):
+        print("Patient phone = %s" % self.__phone)
+    def set_phone(self, newphone):
+        self.__phone = newphone
+
+    def get_address(self):
+        print("Patient address = %s" % self.__address)
+    def set_address(self, newaddress):
+        self.__address = newaddress
+
+from types import ClassMethodDescriptorType
+#Özgeçmiş
+print("""You will enter the informations is about your background. 
+Please, fill in the requested information completely.""")
+
+
+
+
+
+class Ozgecmis():
+ # background_information = []
+
+  def __init__(self, ilness, operation, cigarette, alcohol, drugs_used, allergy):
+
+    self.ilness = ilness
+    self.operation = operation
+    self.cigarette = cigarette
+    self.alcohol = alcohol
+    self.drugs_used = drugs_used
+    self.allergy = allergy
+
+  def show_full_background(self):
+    return self.ilness + " , " + self.operation + " , " + self.cigarette + " , " + self.alcohol + " , " + self.drugs_used + " , " + self.allergy
+
+  @classmethod
+    
+  def get_users_input(self):
+    while 1:
+      entry = input("Type 0 for one entry, 2 for multiple entries. Enter 'x' to exit the system. ")
+      if entry == "0":
+        ilness = input("Please enter your previous ilness: ")
+        #self.background_information.append(entry)
+        print(ilness)
+        break
+
+      elif entry == "2":
+        ilness = input("Please enter your ilnesses seperating with them commas: ")
+        print(ilness)
+        #self.background_information.append(entry)
+        break
+
+      elif entry == "x": 
+        print("Checked out...")
+        break
+      
+      else:
+        print("You have entered invalid! Please try again.")
+        return entry
+      
+    q_cigarette = input("Are you smoking?(Yes-No): ")
+    print(q_cigarette)
+
+    if q_cigarette == "Yes":
+      #self.background_information.append(q_cigarette)
+      q2 = int(input("How many years do you smoke?: "))
+      print(q2)
+
+      if q2 > 0:
+        #self.background_information.append(q2)
+        print(f'He/She has been smoking for {q2} years.')
+
+    else:
+      #self.backgroung_information.append(q_cigarette)
+      print("Somoking: 0")
+
+    operation = input("Please enter your previous operations. Use commas for multiple entries. If not, please enter '0': ")
+    print(operation)
+
+    if operation == "0":
+      print("He/She hasn't had an operation in the past.")
+        
+   # else: 
+      #self.background_information.append(operation)
+
+    q_alcohol = input("Are you drinking alcohol?(Yes-No): ")
+    print(q_alcohol)
+
+    if q_cigarette == "Yes":
+      #self.background_information.append(q_alcohol)
+      q_a1 = int(input("How many years do you drink?: "))
+
+      if q_a1 > 0:
+        #self.background_information.append(q_a1)
+        print(f'He/She has been dringking for {q_a1} years.')
+
+
+    d_count = input("How many drugs do you use in a day? Please write their name with commas: ")
+    #self.background_information.append(d_count)
+    print(d_count)
+
+    allergies = input("Do you have any allergies in the past or present?")
+    print(allergies)
+
+    if allergies == "Yes":
+      qu_3 = input("Please enter your allergies with commas: ")
+      print(qu_3)
+      #self.background_information.append(qu_3)
+
+    else:
+      print("The patient does not have any allergies.")
+
+
+person_1 = Ozgecmis.get_users_input()
+person_1.show_full_background()
+    
+   
+   
+#Soygeçmiş
+
+class Soygecmis:
+
+    def _init_(self, disease_mother, disease_father, family_information):
+        self.disease_mother = disease_mother
+        self.disease_father = disease_father       
+        
+    def get_disease_mother(self):
+        print("Disease from motherside = %s" % self.disease_mother)
+    def set_disease_mother(self, newndisease):
+        self.disease_mother = newndisease
+
+    def get_disease_father(self):
+        print("Disease from fatherside = %s" % self.disease_father)
+    def set_disease_father(self, newndisease1):
+        self.disease_father = newndisease1
+
+    def family_information(self):
+      family = input("Does your both parents alive?")
+      
+
+    if (family_information == "Yes"):
+          disease_mother = input("Please enter your diseases from motherside: ")
+          disease_father = input("Please enter your diseases from fatherside: ")
+          if (disease_mother==" ") : print("The patients has no diseases from motherside.")
+          if (disease_father==" ") : print("The patients has no diseases from fatherside.")
+          else: print("The patients has the following diseases: ") 
+          print(disease_mother, disease_father)
+    else:
+          print("The patients one/more parents are not alive.")
+          
+          
+ class Anamnesis:
+
+     def __init__(self,pain_location,pain_quality,pain_quantity,pain_timing,pain_onset,exacerbating_factor):
+
+         self.pain_location=pain_location
+         self.pain_quality=pain_quality
+         self.pain_quantity=pain_quantity
+         self.pain_timing=pain_timing
+         self.pain_onset=pain_onset
+         self.exacerbating_factor=exacerbating_factor
+
+     def show_full_anamnesis(self):
+
+         return self.pain_location + ',' + self.pain_quality + ',' + self.pain_quantity + ',' + self.pain_timing + ',' +self.pain_timing + ',' + self.pain_onset + ',' + self.exacerbating_factor
+
+     @classmethod
+
+     def get_user_input(self):
+
+         while 1:
+
+             try:
+
+                 pain_location = input('Where is the pain? Does it radiate? ')
+
+                 pain_quality = input('What is the pain like? ')
+
+                 pain_quantity = input("Rate your pain on a scale of 1 to 10 ")
+
+                 pain_timing = input("When did it start? How long does it last? How often does it come?")
+
+                 pain_onset = input("what is the setting in which the symptoms occurs? e.g.environmental factors, personel activities, emotional reactions...")
+
+                 exacerbating_factor = input("Is there anything that makes it better or worse?")
+                 
+                 return self(pain_location,pain_quality,pain_quantity,pain_timing,pain_onset,exacerbating_factor)
+
+             except:
+
+                 print('Invalid input!')
+
+                 continue
+
+person1 = Anamnesis.get_user_input()
+person1.show_full_anamnesis()
+
